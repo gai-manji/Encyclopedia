@@ -9,11 +9,30 @@
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
     <style>
-        /* カードの説明文のテキストエリア */
+        /* カードの説明文エリアの高さ固定 */
         .height>* {
             height: 100px;
             width: 85%;
             margin: 0 1rem;
+        }
+
+        /* --- タブ（ボタン）のスタイル調整 --- */
+
+        /* 1. スマホの時（991px以下）：横幅いっぱい */
+        @media (max-width: 991.98px) {
+            .custom-nav-link {
+                width: 100% !important;
+                text-align: center;
+                margin-bottom: 5px;
+            }
+        }
+
+        /* 2. PCの時（992px以上）：幅200pxで固定 */
+        @media (min-width: 992px) {
+            .custom-nav-link {
+                width: 200px;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -21,101 +40,108 @@
 <body class="bg-light">
 
     <nav class="navbar navbar-expand-lg navbar-light p-2 pb-0" style="background-color: #ffc44d;">
-        <a class="navbar-brand ms-2" href="#" style="font-family: 'oshigo'; font-size: 20px;">ずかん</a>
-        <!-- ハンバーガーメニュー -->
-        <button class="navbar-toggler mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <div class="container-fluid">
+            <a class="navbar-brand ms-2" href="#" style="font-family:'oshigo'; font-size: 20px;">ずかん</a>
 
-        <!-- PC：タブを表示　モバイル：ハンバーガーメニューを表示 -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="nav nav-tabs header-tabs flex-column flex-lg-row w-100 justify-content-lg-end">
-                <li class="nav-item w-25">
-                    <button class="nav-link active text-dark w-100" data-bs-toggle="tab" data-bs-target="#land"
-                        type="button">
-                        陸
-                    </button>
-                </li>
-                <li class="nav-item w-25">
-                    <button class="nav-link text-dark w-100" data-bs-toggle="tab" data-bs-target="#sea" type="button">
-                        海
-                    </button>
-                </li>
-                <li class="nav-item w-25">
-                    <button class="nav-link text-dark w-100" data-bs-toggle="tab" data-bs-target="#sky" type="button">
-                        空
-                    </button>
-                </li>
-            </ul>
+            <button class="navbar-toggler mb-2 border-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="nav nav-tabs border-0 w-100 flex-column flex-lg-row justify-content-lg-end mt-3 mt-lg-0">
+                    <li class="nav-item">
+                        <button class="nav-link active text-dark px-4 custom-nav-link" data-bs-toggle="tab"
+                            data-bs-target="#land" type="button">
+                            陸
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link text-dark px-4 custom-nav-link" data-bs-toggle="tab"
+                            data-bs-target="#sea" type="button">
+                            海
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link text-dark px-4 custom-nav-link" data-bs-toggle="tab"
+                            data-bs-target="#sky" type="button">
+                            空
+                        </button>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
     <div class="container">
         <div class="tab-content mt-3" id="myTabContent">
+
+            <!-- 陸上動物 -->
             <div class="tab-pane fade show active" id="land" role="tabpanel">
                 <!-- カード -->
                 <div class="row g-4">
                     <div class="col-12 col-md-6 col-lg-4 mb-4">
                         <div class="card h-100">
-                            <a href=""><img src="img/320x240.png" class="card-img-top" alt="ダミー画像"></a>
+                            <!-- aタグに詳細ページのリンクを添付する -->
+                            <a href="#"><img src="img/320x240.png" class="card-img-top" alt="ダミー画像"></a>
                             <div class="card-body">
                                 <h5 class="card-title" style="font-family: 'oshigo';">ゴリラ</h5>
                                 <div class="overflow-auto height">
                                     <p class="card-text">
-                                        ゴリラはアフリカに生息する大型の霊長類で、主に森林地帯に住んでいます。彼らは非常に知能が高く、道具を使うこともあります。ゴリラは社会的な動物で、家族単位で生活し、コミュニケーションを取ります。
+                                        ゴリラはアフリカに生息する大型の霊長類で、主に森林地帯に住んでいます。
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- 追加カード例 -->
+                    <!-- 追加 -->
                     <div class="col-12 col-md-6 col-lg-4 mb-4">
                         <div class="card h-100">
-                            <a href=""><img src="img/320x240.png" class="card-img-top" alt="ダミー画像"></a>
+                            <!-- aタグに詳細ページのリンクを添付する -->
+                            <a href="#"><img src="img/320x240.png" class="card-img-top" alt="ダミー画像"></a>
                             <div class="card-body">
                                 <h5 class="card-title" style="font-family: 'oshigo';">ライオン</h5>
                                 <div class="overflow-auto height">
                                     <p class="card-text">
-                                        ライオンはアフリカのサバンナに生息する大型の肉食獣で、百獣の王と称されます。彼らは群れで生活し、狩りを協力して行います。オスライオンはたてがみを持ち、威厳ある姿が特徴です。
+                                        ライオンはアフリカのサバンナに生息する大型の肉食獣で、百獣の王と称されます。
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
-
+                    <!-- 追加 -->
                     <div class="col-12 col-md-6 col-lg-4 mb-4">
                         <div class="card h-100">
-                            <a href=""><img src="img/320x240.png" class="card-img-top" alt="ダミー画像"></a>
+                            <!-- aタグに詳細ページのリンクを添付する -->
+                            <a href="#"><img src="img/320x240.png" class="card-img-top" alt="ダミー画像"></a>
                             <div class="card-body">
                                 <h5 class="card-title" style="font-family: 'oshigo';">シマウマ</h5>
                                 <div class="overflow-auto height">
                                     <p class="card-text">
-                                        シマウマはアフリカに生息する草食動物で、その特徴的な白と黒の縞模様が目を引きます。シマウマの縞模様は個体ごとに異なり、捕食者から身を守るためのカモフラージュ効果があると考えられています。
+                                        シマウマはアフリカに生息する草食動物で、その特徴的な白と黒の縞模様が目を引きます。
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
-        </div>
-    </div>
 
+            <!-- 海洋動物 -->
+            <div class="tab-pane fade" id="sea" role="tabpanel">
+                <div class="row g-4">
+                    <!-- カード -->
+                </div>
+            </div>
 
-    <div class="tab-pane fade" id="sea" role="tabpanel">
-        <div class="row g-4">
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <!-- ここにカード -->
+            <!-- 空の動物 -->
+            <div class="tab-pane fade" id="sky" role="tabpanel">
+                <div class="row g-4">
+                    <!-- カード -->
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="tab-pane fade" id="sky" role="tabpanel">
-        <div class="row g-4">
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <!-- ここにカード -->
-            </div>
+
         </div>
     </div>
 
