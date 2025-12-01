@@ -1,11 +1,127 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>アニマル図鑑（仮）</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <style>
+        /* カードの説明文のテキストエリア */
+        .height>* {
+            height: 100px;
+            width: 85%;
+            margin: 0 1rem;
+        }
+    </style>
 </head>
-<body>
-    
+
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-light p-2 pb-0" style="background-color: #ffc44d;">
+        <a class="navbar-brand ms-2" href="#" style="font-family: 'oshigo'; font-size: 20px;">ずかん</a>
+        <!-- ハンバーガーメニュー -->
+        <button class="navbar-toggler mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- PC：タブを表示　モバイル：ハンバーガーメニューを表示 -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="nav nav-tabs header-tabs flex-column flex-lg-row w-100 justify-content-lg-end">
+                <li class="nav-item w-25">
+                    <button class="nav-link active text-dark w-100" data-bs-toggle="tab" data-bs-target="#land"
+                        type="button">
+                        陸
+                    </button>
+                </li>
+                <li class="nav-item w-25">
+                    <button class="nav-link text-dark w-100" data-bs-toggle="tab" data-bs-target="#sea" type="button">
+                        海
+                    </button>
+                </li>
+                <li class="nav-item w-25">
+                    <button class="nav-link text-dark w-100" data-bs-toggle="tab" data-bs-target="#sky" type="button">
+                        空
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="tab-content mt-3" id="myTabContent">
+            <div class="tab-pane fade show active" id="land" role="tabpanel">
+                <!-- カード -->
+                <div class="row g-4">
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <a href=""><img src="img/320x240.png" class="card-img-top" alt="ダミー画像"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">ゴリラ</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        ゴリラはアフリカに生息する大型の霊長類で、主に森林地帯に住んでいます。彼らは非常に知能が高く、道具を使うこともあります。ゴリラは社会的な動物で、家族単位で生活し、コミュニケーションを取ります。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 追加カード例 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <a href=""><img src="img/320x240.png" class="card-img-top" alt="ダミー画像"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">ライオン</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        ライオンはアフリカのサバンナに生息する大型の肉食獣で、百獣の王と称されます。彼らは群れで生活し、狩りを協力して行います。オスライオンはたてがみを持ち、威厳ある姿が特徴です。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <a href=""><img src="img/320x240.png" class="card-img-top" alt="ダミー画像"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">シマウマ</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        シマウマはアフリカに生息する草食動物で、その特徴的な白と黒の縞模様が目を引きます。シマウマの縞模様は個体ごとに異なり、捕食者から身を守るためのカモフラージュ効果があると考えられています。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="tab-pane fade" id="sea" role="tabpanel">
+        <div class="row g-4">
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <!-- ここにカード -->
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="sky" role="tabpanel">
+        <div class="row g-4">
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <!-- ここにカード -->
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
