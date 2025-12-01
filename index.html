@@ -7,6 +7,14 @@
     <title>アニマル図鑑（仮）</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- 矢印アイコンのCDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- ファビコン -->
+    <link rel="icon" href="img/favicon.ico">
+    <!-- Googleフォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet">
 
     <style>
         /* カードの説明文エリアの高さ固定 */
@@ -16,8 +24,17 @@
             margin: 0 1rem;
         }
 
-        /* --- タブ（ボタン）のスタイル調整 --- */
+        /* ボタンを右下に固定 */
+        #backToTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            /* 初期は非表示 */
+            z-index: 1000;
+        }
 
+        /* --- タブ（ボタン）のスタイル調整 --- */
         /* 1. スマホの時（991px以下）：横幅いっぱい */
         @media (max-width: 991.98px) {
             .custom-nav-link {
@@ -38,19 +55,21 @@
 </head>
 
 <body class="bg-light">
-
-    <nav class="navbar navbar-expand-lg navbar-light p-2 pb-0" style="background-color: #ffc44d;">
+    <nav class="sticky-top navbar navbar-expand-lg navbar-light p-2 pb-0" style="background-color: #ffc44d;">
         <div class="container-fluid">
             <a class="navbar-brand ms-2" href="#" style="font-family:'oshigo'; font-size: 20px;">ずかん</a>
 
+            <!-- ハンバーガーメニュー -->
             <button class="navbar-toggler mb-2 border-0" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
+            
+            <!-- タブ -->
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="nav nav-tabs border-0 w-100 flex-column flex-lg-row justify-content-lg-end mt-3 mt-lg-0">
+                <ul class="nav nav-tabs border-0 w-100 flex-column flex-lg-row justify-content-lg-end mt-3 mt-lg-0"
+                    style="font-family: 'Mochiy Pop One';">
                     <li class="nav-item">
                         <button class="nav-link active text-dark px-4 custom-nav-link" data-bs-toggle="tab"
                             data-bs-target="#land" type="button">
@@ -74,7 +93,7 @@
         </div>
     </nav>
 
-    <div class="container">
+    <div class="container mt-4">
         <div class="tab-content mt-3" id="myTabContent">
 
             <!-- 陸上動物 -->
@@ -125,7 +144,98 @@
                             </div>
                         </div>
                     </div>
+                    <!-- 追加 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <!-- aタグに詳細ページのリンクを添付する -->
+                            <a href="#"><img src="img/320x240.png" class="card-img-top" alt="ダミー画像"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">シマウマ</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        シマウマはアフリカに生息する草食動物で、その特徴的な白と黒の縞模様が目を引きます。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 追加 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <!-- aタグに詳細ページのリンクを添付する -->
+                            <a href="#"><img src="img/320x240.png" class="card-img-top" alt="ダミー画像"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">シマウマ</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        シマウマはアフリカに生息する草食動物で、その特徴的な白と黒の縞模様が目を引きます。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 追加 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <!-- aタグに詳細ページのリンクを添付する -->
+                            <a href="#"><img src="img/320x240.png" class="card-img-top" alt="ダミー画像"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">シマウマ</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        シマウマはアフリカに生息する草食動物で、その特徴的な白と黒の縞模様が目を引きます。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 追加 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <!-- aタグに詳細ページのリンクを添付する -->
+                            <a href="#"><img src="img/320x240.png" class="card-img-top" alt="ダミー画像"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">シマウマ</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        シマウマはアフリカに生息する草食動物で、その特徴的な白と黒の縞模様が目を引きます。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 追加 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <!-- aタグに詳細ページのリンクを添付する -->
+                            <a href="#"><img src="img/320x240.png" class="card-img-top" alt="ダミー画像"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">シマウマ</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        シマウマはアフリカに生息する草食動物で、その特徴的な白と黒の縞模様が目を引きます。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 追加 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <!-- aタグに詳細ページのリンクを添付する -->
+                            <a href="#"><img src="img/320x240.png" class="card-img-top" alt="ダミー画像"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">シマウマ</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        シマウマはアフリカに生息する草食動物で、その特徴的な白と黒の縞模様が目を引きます。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
 
             <!-- 海洋動物 -->
@@ -145,9 +255,39 @@
         </div>
     </div>
 
+    <!-- 上に戻るボタン -->
+    <button type="button" class="btn btn-lg rounded-circle" id="backToTopBtn">
+        <!-- アイコンのサイズは、フォント依存。調整する際は font-size でサイズ調整 -->
+        <i class="bi bi-arrow-up-circle-fill" style="color: #ffc44d; font-size: 4rem;"></i>
+    </button>
+
+
+
+    <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
+
+    <script>
+        // スクロールで表示/非表示を切り替え
+        window.addEventListener("scroll", function () {
+            const btn = document.getElementById("backToTopBtn");
+            if (window.scrollY > 200) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        });
+
+        // クリックで上に戻る
+        document.getElementById("backToTopBtn").addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+
 </body>
+<footer class="d-flex align-items-center justify-content-center" style="background-color: #ffc44d; height:50px;">
+    <p class="mb-0 height:60px;">&copy; チーム開発学習. 2025.</p>
+</footer>
 
 </html>
