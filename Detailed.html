@@ -3,9 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>詳細ページ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* 説明エリアのスタイルです */
+        .description-box {
+            height: 400px; /* 高さを固定 */
+            overflow-y: auto; /* 縦方向にはみ出たらスクロール */
+        }
+        
+        /* 画像を枠いっぱいに表示 */
+        .animal-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover; /* 比率を保ってトリミング */
+            border-radius: 8px;
+        }
+    </style>
 </head>
-<body>
-    
+<body class="bg-light py-5">
+
+<div class="container">
+    <div class="card shadow-sm">
+        <div class="card-header bg-white d-flex justify-content-between align-items-center py-3">
+            <!-- 適宜名前、詳細を変更して使ってください！ -->
+            <h1 class="h3 m-0 fw-bold">ライオン</h1> 
+            <a href="index.html" class="btn btn-outline-secondary btn-sm">
+                &larr; ホームに戻る
+            </a>
+        </div>
+        
+        <div class="card-body p-4">
+            <div class="row">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <img src="Lion001.jpg" alt="動物の画像" class="animal-img">
+                </div>
+
+                <div class="col-md-6">
+                    <h5 class="card-title text-muted border-bottom pb-2">動物の説明</h5>
+                    
+                    <div class="description-box pe-2">
+                        <!-- 説明には、「○○は○○科○○属に分類される○○類です。」を入力後、生息区域、特徴、生物の活動内容を入力する形となっています。
+                         （情報が少ない、調べてもわからない場合は分かるところだけでも大丈夫です！）
+                         その他入力するものがあれば適宜入力してください。 -->
+                        <p>ここに動物の詳細な説明が入ります。例えば、ライオンはネコ科ヒョウ属に分類される食肉類です。別名はシシ（獅子）。オスは体重は250キログラムを超えることもあり、ネコ科ではトラに次いで2番目に大きな種です。</p>
+                        サバンナや草原、低木林などに生息しています。群れ（プライド）を作って生活するのが特徴で、これは他のネコ科動物にはあまり見られない習性です。</p>
+                        <p>狩りは主にメスが集団で行い、ヌーやシマウマなどの大型草食動物を捕食します。オスは縄張りを守る役割を担っています。</p>
+                        <p>以下、スクロールを確認するための長文です。<br>
+                        テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
