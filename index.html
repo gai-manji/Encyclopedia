@@ -29,9 +29,10 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            display: none;
             /* 初期は非表示 */
             z-index: 1000;
+            /* 枠線を消す */
+            border: none;
         }
 
         /* --- タブ（ボタン）のスタイル調整 --- */
@@ -55,44 +56,48 @@
 </head>
 
 <body class="bg-light">
-    <nav class="sticky-top navbar navbar-expand-lg navbar-light p-2 pb-0" style="background-color: #ffc44d;">
-        <div class="container-fluid">
-            <a class="navbar-brand ms-2" href="#" style="font-family:'oshigo'; font-size: 20px;">ずかん</a>
+    
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-light p-2 pb-0" style="background-color: #ffc44d;">
+            <div class="container-fluid">
+                <a class="navbar-brand ms-2" href="#" style="font-family:'oshigo'; font-size: 20px;">ずかん</a>
 
-            <!-- ハンバーガーメニュー -->
-            <button class="navbar-toggler mb-2 border-0" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <!-- タブ -->
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="nav nav-tabs border-0 w-100 flex-column flex-lg-row justify-content-lg-end mt-3 mt-lg-0"
-                    style="font-family: 'Mochiy Pop One';">
-                    <li class="nav-item">
-                        <button class="nav-link active text-dark px-4 custom-nav-link" data-bs-toggle="tab"
-                            data-bs-target="#land" type="button">
-                            陸
-                        </button>
-                    </li>
-                    <li class="nav-item">
-                        <button class="nav-link text-dark px-4 custom-nav-link" data-bs-toggle="tab"
-                            data-bs-target="#sea" type="button">
-                            海
-                        </button>
-                    </li>
-                    <li class="nav-item">
-                        <button class="nav-link text-dark px-4 custom-nav-link" data-bs-toggle="tab"
-                            data-bs-target="#sky" type="button">
-                            空
-                        </button>
-                    </li>
-                </ul>
+                <!-- ハンバーガーメニュー -->
+                <button class="navbar-toggler mb-2 border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- タブ -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="nav nav-tabs border-0 w-100 flex-column flex-lg-row justify-content-lg-end mt-3 mt-lg-0"
+                        style="font-family: 'Mochiy Pop One';">
+                        <li class="nav-item">
+                            <button class="nav-link active text-dark px-4 custom-nav-link" data-bs-toggle="tab"
+                                data-bs-target="#land" type="button">
+                                陸
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link text-dark px-4 custom-nav-link" data-bs-toggle="tab"
+                                data-bs-target="#sea" type="button">
+                                海
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link text-dark px-4 custom-nav-link" data-bs-toggle="tab"
+                                data-bs-target="#sky" type="button">
+                                空
+                            </button>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
+    <!-- 中身 -->
     <div class="container mt-4">
         <div class="tab-content mt-3" id="myTabContent">
 
@@ -248,7 +253,141 @@
             <!-- 空の動物 -->
             <div class="tab-pane fade" id="sky" role="tabpanel">
                 <div class="row g-4">
-                    <!-- カード -->
+                    <!-- カード1 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <!-- aタグに詳細ページのリンクを添付する -->
+                            <a href="#"><img src="img/sky/aosagi.jpg" class="card-img-top" alt="アオサギ"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">アオサギ</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        日本で繁殖するサギの仲間としては最大です。背が高く、脚も長い。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- カード2 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <!-- aタグに詳細ページのリンクを添付する -->
+                            <a href="#"><img src="img/sky/inuwashi.jpg" class="card-img-top" alt="イヌワシ"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">イヌワシ</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        全身ほぼ黒褐色をした大型の猛禽です。本州、四国、九州の山岳地に生息します。絶滅の危惧されている代表的な種です。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- カード3 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <!-- aタグに詳細ページのリンクを添付する -->
+                            <a href="#"><img src="img/sky/ohakucho.jpg" class="card-img-top" alt="オオハクチョウ"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">オオハクチョウ</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        日本では冬鳥で、主に北海道と東北地方北部で越冬しています。シベリアからやってくる、代表的な冬鳥です。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- カード4 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <!-- aタグに詳細ページのリンクを添付する -->
+                            <a href="#"><img src="img/sky/oshidari.jpg" class="card-img-top" alt="オシドリ"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">オシドリ</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        メスと一緒にツガイでいることが多く、オシドリ夫婦の名の由来となっています。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- カード5 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <!-- aタグに詳細ページのリンクを添付する -->
+                            <a href="#"><img src="img/sky/kizi.jpg" class="card-img-top" alt="キジ"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">キジ</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        焼野の雉（きぎす）、夜の鶴」などの子を思う親の愛情の深さを表わすタトエ話があります。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- カード6 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <!-- aタグに詳細ページのリンクを添付する -->
+                            <a href="#"><img src="img/sky/shimaenaga.jpg" class="card-img-top" alt="シマエナガ"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">シマエナガ</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        シマエナガのシマは「島」で、北海道を意味し、エナガの北海道亜種であることを表しています。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- カード7 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <!-- aタグに詳細ページのリンクを添付する -->
+                            <a href="#"><img src="img/sky/suzume.jpg" class="card-img-top" alt="スズメ"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">スズメ</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        日本中に分布います。日本人にとっていちばん身近な鳥です。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- カード8 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <!-- aタグに詳細ページのリンクを添付する -->
+                            <a href="#"><img src="img/sky/segurosekirei.jpg" class="card-img-top" alt="セグロセキレイ"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">セグロセキレイ</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        着地の折には腰を上下に振ることが多く、セキレイ類の特徴の一つになっています。日本だけで繁殖する日本特産種です。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- カード9 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <!-- aタグに詳細ページのリンクを添付する -->
+                            <a href="#"><img src="img/sky/dobato.jpg" class="card-img-top" alt="ドバト"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">ドバト</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        通信用に改良した伝書鳩などが、野生化して生活しているものを日本ではドバトと呼んでいます。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -285,9 +424,18 @@
         });
     </script>
 
+    <footer class="position-relative d-flex align-items-center" style="background-color: #ffc44d; height:50px;">
+        <div class="container">
+            <!-- 左端にお問い合わせ -->
+            <a href="form.html" class="m-1">お問い合わせ</a>
+
+            <!-- 中央にコピーライト ms-●：余白を左側に追加 -->
+            <p class="mb-0 position-absolute top-50 start-50 translate-middle ms-3">
+                &copy; チーム開発学習. 2025.
+            </p>
+        </div>
+    </footer>
 </body>
-<footer class="d-flex align-items-center justify-content-center" style="background-color: #ffc44d; height:50px;">
-    <p class="mb-0 height:60px;">&copy; チーム開発学習. 2025.</p>
-</footer>
+
 
 </html>
