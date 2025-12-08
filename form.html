@@ -113,12 +113,14 @@
     </footer>
 
     <script>
+        // HTML内で指定したid属性を持つ要素を取得するメソッド
         const contactForm = document.getElementById('contactForm');
         const emailInput = document.getElementById('email');
         const phoneInput = document.getElementById('phone');
         const emailError = document.getElementById('emailError');
         const phoneError = document.getElementById('phoneError');
 
+        // 正しいメールの形かどうかを決めるコード
         function validateEmail() {
             const email = emailInput.value.trim();
             if (!emailInput.validity.valid) {
@@ -132,6 +134,7 @@
             }
         }
 
+        // 「0＋数字(1〜4桁)-数字(1〜4桁)-4桁数字」という形にだけ合致させる
         function validatePhone() {
             const phone = phoneInput.value.trim();
             const phonePattern = /^0\d{1,4}-\d{1,4}-\d{4}$/;
@@ -146,11 +149,13 @@
             }
         }
 
+        // 入力ミスから文字のチェックの両立をしてくれる
         emailInput.addEventListener('input', validateEmail);
         emailInput.addEventListener('blur', validateEmail);
         phoneInput.addEventListener('input', validatePhone);
         phoneInput.addEventListener('blur', validatePhone);
 
+        // フォームが送信されたときに実行する処理
         contactForm.addEventListener('submit', function (e) {
             const validEmail = validateEmail();
             const validPhone = validatePhone();
