@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>セグロセキレイ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- 矢印アイコンのCDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- ファビコン -->
+    <link rel="icon" href="../../img/favicon.ico">
+
+    <style>
+        .ttl {
+            font-size: 36px;
+            font-family: 'oshigo', sans-serif;
+        }
+
+        /* 画像を枠いっぱいに表示 */
+        .animal-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* 比率を保ってトリミング */
+            border-radius: 8px;
+        }
+
+        /* 上に戻るボタンのレイアウト */
+        #backToTopBtn {
+            /* 画面に固定 */
+            position: fixed;
+            /* 下からの距離 */
+            bottom: 20px;
+            /* 右からの距離 */
+            right: 20px;
+            /* 他要素より前面に */
+            z-index: 1000;
+            /* 枠線を消す */
+            border: none;
+        }
+    </style>
+</head>
+
+
+
+<body class="bg-light">
+    <!-- sticky-top：ヘッダーを上部に固定 -->
+    <header class="bg-warning sticky-top">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+            <!-- 左側は空のスペースでバランスを取る -->
+            <div></div>
+
+            <!-- 中央にタイトル -->
+            <h1 class="m-0 text-center flex-grow-1 ttl">セグロセキレイ</h1>
+
+            <!-- 右側にボタン -->
+            <a href="../../index.html" class="btn btn-outline-secondary btn-sm">
+                &larr; ホームに戻る
+            </a>
+        </div>
+    </header>
+    <div class="container py-5">
+        <!-- 画像を上に -->
+        <div class="mb-3">
+            <img src="../../img/sky/japanese_wagtail/segurosekirei.webp" alt="セグロセキレイ" class="animal-img">
+        </div>
+
+        <!-- テキストを下に -->
+        <h5 class="text-muted border-bottom pb-2">動物の説明</h5>
+        <div class="description-box pe-2">
+            <p>
+                全長21cm。全体が白黒模様のセキレイの仲間の鳥。頭から背と胸は黒色で、頭の黒色の中に額の白色が良く目立ちます。翼は白色部分が多く、腹は白色なので、飛ぶと白い鳥に見えます。着地の折には腰を上下に振ることが多く、セキレイ類の特徴の一つになっています。最近になって韓国での繁殖例が知られましたが、世界的には日本特産種と言ってよいでしょう。北海道から九州までの河川や池沼畔などに棲息し、海岸には出ません。飛行は上下に揺れる波型を描き、その時には「ジジッジジッ」といった濁った声を出しています。<br>
+                近年、日本では急速に分布を拡げているハクセキレイとの軋轢（あつれき）があり、個体数が減少する傾向にあります。
+            </p>
+        </div>
+        <div class="mt-4">
+            <div class="row">
+                <!-- セット1 横並びに -->
+                <div class="col-12 col-md-6 mb-3">
+                    <div class="row align-items-start">
+                        <!-- 左側：画像 -->
+                        <div class="col-6">
+                            <img src="../../img/sky/japanese_wagtail/hakusekirei.webp" alt="ハクセキレイ" class="img-fluid">
+                        </div>
+                        <!-- 左側：テキスト -->
+                        <div class="col-6">
+                            <h6>類似種</h6>
+                            <h4 style="font-family: 'oshigo';">ハクセキレイ</h4>
+                            <p>
+                                ユーラシア大陸のほぼ全域に分布・繁殖している繁栄している種。海岸、河川、池沼など水辺の他に、農耕地、駐車場、道路、工場内の舗装地など他の鳥が利用しない無機質的な場所にも生息できています。<br>
+                                ハクセキレイの増加に比較して、セグロセキレイとキセキレイが急激に減少しています。永年「キ」と「セグロ」ですみ分けていた河川沿いの水際が「ハク」に浸食され、追いやられているようです。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- セット2 -->
+                <div class="col-12 col-md-6 mb-3">
+                    <div class="row align-items-start">
+                        <div class="col-6">
+                            <img src="../../img/sky/japanese_wagtail/yoshitune.webp" alt="源義経" class="img-fluid">
+                        </div>
+                        <div class="col-6">
+                            <h6>セキレイが題材</h6>
+                            <h4>百人一首</h4>
+                            <p>
+                                世の中は　常にもがもな　渚（なぎさ）漕ぐ<br>
+                                海人（あま）の小舟（をぶね）の　綱手（つなで）かなしも<br>
+                                【現代語訳】<br>
+                                世の中の様子が、こんな風にいつまでも変わらずあってほしいものだ。波打ち際を漕いでゆく漁師の小舟が、舳先（へさき）にくくった綱で陸から引かれている、ごく普通の情景が切なくいとしい。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- 上に戻るボタン -->
+    <button type="button" class="btn btn-lg rounded-circle" id="backToTopBtn">
+        <!-- アイコンのサイズは、フォント依存。調整する際は font-size でサイズ調整 -->
+        <i class="bi bi-arrow-up-circle-fill" style="color: #ffc44d; font-size: 4rem;"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+        // スクロールで表示/非表示を切り替え
+        const backToTopBtn = document.getElementById("backToTopBtn");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 200) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        });
+
+        // クリックで上に戻る
+        backToTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+    </script>
+
+</body>
+
+<footer class="d-flex align-items-center justify-content-center" style="background-color: #ffc44d; height:50px ; ">
+    <div class="container">
+        <!-- 中央にコピーライト -->
+        <p class="mb-0 position-absolute start-50 translate-middle">
+            &copy; チーム開発学習. 2025.
+        </p>
+    </div>
+</footer>
+
+</html>
