@@ -2,8 +2,8 @@
 <html lang="ja">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>お問い合わせ先</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -12,7 +12,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet">
     <style>
-        /* 余白を調整 */
         .mb-3,
         .mb-4 {
             margin-bottom: 1.5rem !important;
@@ -25,28 +24,52 @@
         button[type="submit"] {
             margin-bottom: 2rem;
         }
+
+        /* エラー時のスタイル */
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 0.3em;
+        }
+
+        input.invalid {
+            border: 2px solid red;
+        }
+
+        /* ロゴ／リンクだけにフォント適用 */
+        .navbar-brand {
+            font-family: 'Mochiy Pop One', sans-serif;
+        }
     </style>
 </head>
 
 <body>
-    <nav class="sticky-top navbar navbar-expand-lg navbar-light p-2 pb-0" style="background-color: #ffc44d;">
-        <div class="container-fluid">
-            <a class="navbar-brand ms-2" href="#" style="font-family:'oshigo'; font-size: 20px;">ずかん</a>
-            <a href="index.html" class="navbar-brand ms-2" style="font-family:'oshigo'; font-size: 20px;">TOPに戻る</a>
-        </div>
-    </nav>
+    <header>
+        <nav class="sticky-top navbar navbar-expand-lg navbar-light p-2 pb-0" style="background-color: #ffc44d;">
+            <div class="container-fluid">
+                <a class="navbar-brand ms-2" href="#" style="font-size: 20px;">ずかん</a>
+                <a href="index.html" class="navbar-brand ms-2" style="font-size: 20px;">TOPに戻る</a>
+            </div>
+        </nav>
+    </header>
 
     <div class="container mt-4">
         <h2>お問い合わせフォーム</h2>
         <form id="contactForm">
             <div class="mb-3">
                 <label for="email" class="form-label">メールアドレス</label>
-                <input type="email" class="form-control" id="email" name="email" required>
+                <input type="email" class="form-control" id="email" name="email" placeholder="example@example.com"
+                    required>
+                <div class="error-message" id="emailError">
+                </div>
             </div>
+
             <div class="mb-3">
                 <label for="phone" class="form-label">電話番号</label>
-                <input type="tel" class="form-control" id="phone" name="phone" placeholder="例: 090-1234-5678" required>
+                <input type="tel" class="form-control" id="phone" name="phone" placeholder="090-1234-5678" required>
+                <div class="error-message" id="phoneError"></div>
             </div>
+
             <div class="mb-3">
                 <label for="affiliation" class="form-label">所属場所</label>
                 <select name="affiliation" id="affiliation" class="form-select" required>
@@ -55,6 +78,7 @@
                     <option value="other">その他</option>
                 </select>
             </div>
+
             <div class="mb-3">
                 <label for="Q_Category" class="form-label">お問い合わせ種別</label>
                 <select name="Q_Category" id="Q_Category" class="form-select" required>
@@ -63,24 +87,25 @@
                     <option value="estimate">お見積もりのご相談</option>
                     <option value="other">その他</option>
                 </select>
-                <div class="form-text">内容に最も近い項目を選択して下さい。</div>
+                <div class="form-text">内容に最も近い項目を選択してください。</div>
             </div>
+
             <div class="mb-4 row">
                 <label for="Q-Ask" class="col-form-label col-md-3">お問い合わせ内容</label>
                 <div class="col-md-9">
                     <textarea name="Q-Ask" id="Q-Ask" class="form-control" rows="5" required></textarea>
                 </div>
             </div>
+
             <div class="form-check mb-3">
-                <input class="form-check-input" type="checkbox" value="" id="agree" name="agree" required>
-                <label class="form-check-label" for="agree">
-                    個人情報の取扱いに同意します
-                </label>
+                <input class="form-check-input" type="checkbox" id="agree" name="agree" required>
+                <label class="form-check-label" for="agree">個人情報の取扱いに同意します</label>
             </div>
 
             <button type="submit" class="btn btn-primary">送信</button>
         </form>
     </div>
+
     <footer class="position-relative d-flex align-items-center" style="background-color: #ffc44d; height:50px;">
         <div class="container">
             <p class="mb-0 position-absolute top-50 start-50 translate-middle">&copy; チーム開発学習. 2025.</p>
@@ -88,18 +113,54 @@
     </footer>
 
     <script>
-        document.getElementById('contactForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-            const phone = document.getElementById('phone').value.trim();
-            //電話番号に合わせたチェック（数字とハイフンの10〜11桁など）
-            const phonePattern = /^0\\d{1,4}[\\-]?\\d{1,4}[\\-]?\\d{4}$/;
-            if (!phonePattern.test(phone)) {
-                alert('電話番号の形式が正しくありません。例: 090-1234-5678');
-                return;
+        const contactForm = document.getElementById('contactForm');
+        const emailInput = document.getElementById('email');
+        const phoneInput = document.getElementById('phone');
+        const emailError = document.getElementById('emailError');
+        const phoneError = document.getElementById('phoneError');
+
+        function validateEmail() {
+            const email = emailInput.value.trim();
+            if (!emailInput.validity.valid) {
+                emailInput.classList.add('invalid');
+                emailError.textContent = '有効なメールアドレスを入力してください。';
+                return false;
+            } else {
+                emailInput.classList.remove('invalid');
+                emailError.textContent = '';
+                return true;
             }
-            // 全てOKなら送信完了アラート
-            alert('お問い合わせを送信しました。ありがとうございます。');
-            this.reset();
+        }
+
+        function validatePhone() {
+            const phone = phoneInput.value.trim();
+            const phonePattern = /^0\d{1,4}-\d{1,4}-\d{4}$/;
+            if (!phonePattern.test(phone)) {
+                phoneInput.classList.add('invalid');
+                phoneError.textContent = '電話番号の形式が正しくありません。例: 090-1234-5678';
+                return false;
+            } else {
+                phoneInput.classList.remove('invalid');
+                phoneError.textContent = '';
+                return true;
+            }
+        }
+
+        emailInput.addEventListener('input', validateEmail);
+        emailInput.addEventListener('blur', validateEmail);
+        phoneInput.addEventListener('input', validatePhone);
+        phoneInput.addEventListener('blur', validatePhone);
+
+        contactForm.addEventListener('submit', function (e) {
+            const validEmail = validateEmail();
+            const validPhone = validatePhone();
+            if (!validEmail || !validPhone) {
+                e.preventDefault();
+                alert('入力内容に不備があります。ご確認ください。');
+            } else {
+                alert('お問い合わせを送信しました。ありがとうございます。');
+                contactForm.reset();
+            }
         });
     </script>
 </body>
