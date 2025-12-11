@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>スルメイカ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- 矢印アイコンのCDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- ファビコン -->
+    <link rel="icon" href="../../img/favicon.ico">
+
+    <style>
+        .ttl {
+            font-size: 36px;
+            font-family: 'oshigo', sans-serif;
+        }
+
+        /* 画像を枠いっぱいに表示 */
+        .animal-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            /* 比率を保ってトリミング */
+            border-radius: 8px;
+        }
+
+        /* 上に戻るボタンのレイアウト */
+        #backToTopBtn {
+            /* 画面に固定 */
+            position: fixed;
+            /* 下からの距離 */
+            bottom: 20px;
+            /* 右からの距離 */
+            right: 20px;
+            /* 他要素より前面に */
+            z-index: 1000;
+            /* 枠線を消す */
+            border: none;
+        }
+    </style>
+</head>
+
+
+
+<body class="bg-light">
+    <!-- sticky-top：ヘッダーを上部に固定 -->
+    <header class="bg-warning sticky-top">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+            <!-- 左側は空のスペースでバランスを取る -->
+            <div></div>
+
+            <!-- 中央にタイトル -->
+            <h1 class="m-0 text-center flex-grow-1 ttl">いか</h1>
+
+            <!-- 右側にボタン -->
+            <a href="../../index.html" class="btn btn-outline-secondary btn-sm">
+                &larr; ホームに戻る
+            </a>
+        </div>
+    </header>
+    <div class="container py-5">
+        <!-- 画像を上に -->
+        <div class="mb-3">
+            <img src="../../../img/sea/いか.webp" alt="いか" class="animal-img">
+        </div>
+
+        <!-- テキストを下に -->
+        <h5 class="text-muted border-bottom pb-2">生き物の説明</h5>
+        <div class="description-box pe-2">
+            <p>
+                イカは「頭足類 (Cephalopoda)」という軟体動物の仲間で、体は**「胴 (マントル)」＋「頭」＋「腕 (アーム)／触腕 (テントacle)」**で構成されている。
+                イカの大きな特徴は、8本の短い腕 + 2本の長い触腕を持っていて、合計で「見た目には10本の手脚」に見えること。触腕は獲物をつかむために伸び、腕と触腕には多数の「吸盤
+                (またはフック)」があって、それで魚やエビなどを捕まえるんだ。
+                体は魚のような硬い骨やウロコではなく、柔らかく筋肉質。イカは水の抵抗を利用しやすい流線型の体をしていて、「水を体内に取り込んで一気に吐き出す — ジェット推進 (jet propulsion)」
+                という泳ぎ方で、水中を高速で移動することができる。
+                泳ぐときは、そのジェット推進とともに、胴の両脇にあるヒレ (フィン) を使って姿勢を整えたり、ゆっくり泳いだりもするよ。
+                さらに、全世界には約 300種以上 のイカがいて、浅い海から深海まで、多様な環境に適応して暮らしているよ。
+            </p>
+        </div>
+        <div class="mt-4">
+            <div class="row">
+                <!-- セット1 横並びに -->
+                <div class="col-12 col-md-6 mb-3">
+                    <div class="row align-items-start">
+                        <!-- 左側：画像 -->
+                        <div class="col-6">
+                            <img src="../../img/sea/sea1img/だいおういか.jpg" alt="ダイオウイカ" class="img-fluid">
+                        </div>
+                        <!-- 左側：テキスト -->
+                        <div class="col-6">
+                            <h6>類似種</h6>
+                            <h4 style="font-family: 'oshigo';">ダイオウイカ</h4>
+                            <p>
+                                軟体動物の「頭足類 (Cephalopoda)」に属するイカのひとつで、学名は Architeuthis dux。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 上に戻るボタン -->
+    <button type="button" class="btn btn-lg rounded-circle" id="backToTopBtn">
+        <!-- アイコンのサイズは、フォント依存。調整する際は font-size でサイズ調整 -->
+        <i class="bi bi-arrow-up-circle-fill" style="color: #ffc44d; font-size: 4rem;"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+        // スクロールで表示/非表示を切り替え
+        const backToTopBtn = document.getElementById("backToTopBtn");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 200) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        });
+
+        // クリックで上に戻る
+        backToTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+    </script>
+
+</body>
+
+<footer class="d-flex align-items-center justify-content-center" style="background-color: #ffc44d; height:50px ; ">
+    <div class="container">
+        <!-- 中央にコピーライト -->
+        <p class="mb-0 position-absolute start-50 translate-middle">
+            &copy; チーム開発学習. 2025.
+        </p>
+    </div>
+</footer>
+
+</html>
