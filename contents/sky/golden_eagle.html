@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>イヌワシ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- 矢印アイコンのCDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- ファビコン -->
+    <link rel="icon" href="../../img/favicon.ico">
+
+    <style>
+        .ttl {
+            font-size: 36px;
+            font-family: 'oshigo', sans-serif;
+        }
+
+        /* 画像を枠いっぱいに表示 */
+        .animal-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* 比率を保ってトリミング */
+            border-radius: 8px;
+        }
+
+        /* 上に戻るボタンのレイアウト */
+        #backToTopBtn {
+            /* 画面に固定 */
+            position: fixed;
+            /* 下からの距離 */
+            bottom: 20px;
+            /* 右からの距離 */
+            right: 20px;
+            /* 他要素より前面に */
+            z-index: 1000;
+            /* 枠線を消す */
+            border: none;
+        }
+    </style>
+</head>
+
+
+
+<body class="bg-light">
+    <!-- sticky-top：ヘッダーを上部に固定 -->
+    <header class="bg-warning sticky-top">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+            <!-- 左側は空のスペースでバランスを取る -->
+            <div></div>
+
+            <!-- 中央にタイトル -->
+            <h1 class="m-0 text-center flex-grow-1 ttl">イヌワシ</h1>
+
+            <!-- 右側にボタン -->
+            <a href="../../index.html" class="btn btn-outline-secondary btn-sm">
+                &larr; ホームに戻る
+            </a>
+        </div>
+    </header>
+    <div class="container py-5">
+        <!-- 画像を上に -->
+        <div class="mb-3">
+            <img src="../../img/sky/golden_eagle/inuwashi.webp" alt="イヌワシ" class="animal-img">
+        </div>
+
+        <!-- テキストを下に -->
+        <h5 class="text-muted border-bottom pb-2">動物の説明</h5>
+        <div class="description-box pe-2">
+            <p>
+                全長63cm。翼開長174cmはいずれもメス。全身ほぼ黒褐色をした大型の猛禽で、成鳥では頭が金色になります。そのため英名はGolden eagle。若鳥には翼に大きな白斑が出、尾羽の根元も白色です。「ピィーウ」あるいは「ポィョー」と聞こえる声をだします。餌はノウサギなど哺乳類、ヤマドリなど大型鳥類、アオダイショウなどが主。翼をゆるいＶ字型に保って、グライディングで飛ぶことが多いです。そして空中あるいは樹上や岩上などで餌動物を見つけると急降下して捕らえます。そのため枝の混んだ森林の中まで追いかけて行くことはできないので、広い草原や急な崖地で草や木が育ちにくい場所、雪の積もらない場所などで獲物を探します。巣は崖の岩棚につくるものが多いのですが、大木につくるものもいます。<br>
+                本州、四国、九州の山岳地に生息します。絶滅の危惧されている代表的な種で、個体数は全国で400羽に満たないと考えられています。<br>
+                天狗のモデルという説もあり、深山を精悍（せいかん）に飛ぶ日本の山地最大の猛禽です。
+            </p>
+        </div>
+        <div class="mt-4">
+            <div class="row">
+                <!-- セット1 横並びに -->
+                <div class="col-12 col-md-6 mb-3">
+                    <div class="row align-items-start">
+                        <!-- 左側：画像 -->
+                        <div class="col-6">
+                            <img src="../../img/sky/golden_eagle/tobi.webp" alt="トビ" class="img-fluid">
+                        </div>
+                        <!-- 左側：テキスト -->
+                        <div class="col-6">
+                            <h6>類似種</h6>
+                            <h4 style="font-family: 'oshigo';">トビ</h4>
+                            <p>
+                                日本のタカの仲間としては大型種です。日本には鳶（とび）と呼ばれる職業があります。<br>
+                                トビは、「飛び」からきた名前だという説もあります。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- セット2 -->
+                <div class="col-12 col-md-6 mb-3">
+                    <div class="row align-items-start">
+                        <div class="col-6">
+                            <img src="../../img/sky/golden_eagle/tengu.webp" alt="天狗" class="img-fluid">
+                        </div>
+                        <div class="col-6">
+                            <h6>今昔物語</h6>
+                            <h4>天狗の伝説</h4>
+                            <p>
+                                伊吹山の護国寺で三修禅師は仏に迎えられたましたが、七日後に杉の梢で裸の姿で発見され、救出後三日で狂死しました。これは天狗に化かされたと伝えられています。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- 上に戻るボタン -->
+    <button type="button" class="btn btn-lg rounded-circle" id="backToTopBtn">
+        <!-- アイコンのサイズは、フォント依存。調整する際は font-size でサイズ調整 -->
+        <i class="bi bi-arrow-up-circle-fill" style="color: #ffc44d; font-size: 4rem;"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+        // スクロールで表示/非表示を切り替え
+        const backToTopBtn = document.getElementById("backToTopBtn");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 200) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        });
+
+        // クリックで上に戻る
+        backToTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+    </script>
+
+</body>
+
+<footer class="d-flex align-items-center justify-content-center" style="background-color: #ffc44d; height:50px ; ">
+    <div class="container">
+        <!-- 中央にコピーライト -->
+        <p class="mb-0 position-absolute start-50 translate-middle">
+            &copy; チーム開発学習. 2025.
+        </p>
+    </div>
+</footer>
+
+</html>
