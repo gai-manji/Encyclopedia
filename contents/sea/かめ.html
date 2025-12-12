@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>かめ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="icon" href="../../img/favicon.ico">
+
+    <style>
+        .ttl {
+            font-size: 36px;
+            font-family: 'oshigo', sans-serif;
+        }
+
+        .animal-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        #backToTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            border: none;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+    <header class="bg-warning sticky-top">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+            <div></div>
+            <h1 class="m-0 text-center flex-grow-1 ttl">かめ</h1>
+            <a href="../../index.html" class="btn btn-outline-secondary btn-sm">
+                &larr; ホームに戻る
+            </a>
+        </div>
+    </header>
+
+    <div class="container py-5">
+        <div class="mb-3">
+            <img src="../../img/sea/かめ/かめ.webp" alt="かめ" class="animal-img">
+        </div>
+
+        <h5 class="text-muted border-bottom pb-2">動物の説明</h5>
+        <div class="description-box pe-2">
+            <p>
+                カメは「Testudines（カメ目）」に属する爬虫類であり、背面と腹側が「甲羅（shell）」と呼ばれる殻で覆われている、きわめて独特な身体構造を持つ動物でございます。<br>
+                全世界に数多くの種類が存在し、海に生息する海亀、淡水にすむ種類、さらには陸地で生活するリクガメなど、生息環境は非常に多様でございます。<br>
+                カメの甲羅は単に“背負っている殻”ではなく、肋骨や背骨が進化して形成されたものでございます。そのため甲羅は身体の一部であり、脱いだり取り替えたりすることはできない構造となっております。
+            </p>
+        </div>
+
+        <div class="mt-4">
+            <div class="row">
+
+                <!-- セット1 -->
+                <div class="col-12 col-md-6 mb-3">
+                    <div class="row align-items-start">
+                        <div class="col-6">
+                            <img src="../../img/sea/かめ/かめ.webp" alt="かめ" class="img-fluid">
+                        </div>
+                        <div class="col-6">
+                            <h6>古い生き物</h6>
+                            <h4 style="font-family: 'oshigo';">かめ</h4>
+                            <p>
+                                カメ（カメ目）は地球上に非常に長い歴史を持つ生き物でございます。化石記録から見ても、その起源は古く、多くの環境変化や絶滅の危機を乗り越えて現在まで生き残ってきた“強い生命力を持つ爬虫類”といえます。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- セット2 -->
+                <div class="col-12 col-md-6 mb-3">
+                    <div class="row align-items-start">
+                        <div class="col-6">
+                            <img src="../../img/sea/かめ/かめ２.webp" alt="かめ" class="img-fluid">
+                        </div>
+                        <div class="col-6">
+                            <h6>甲羅の秘密</h6>
+                            <h4>甲羅</h4>
+                            <p>
+                                カメの甲羅は、外敵から身を守るために進化してきたものと考えられております。カメは走る速度が速くないため、逃げるよりも「硬い殻で身を守る」という方法を選んだとされています。<br>
+                                また、甲羅が骨格とつながった身体の一部であるため、脱皮のように“脱ぐ”ことはできません。そのため、成長に合わせて骨と皮膚が一体となって大きくなるという、非常に特殊な構造を備えております。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <button type="button" class="btn btn-lg rounded-circle" id="backToTopBtn">
+        <i class="bi bi-arrow-up-circle-fill" style="color: #ffc44d; font-size: 4rem;"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+    <script>
+        const backToTopBtn = document.getElementById("backToTopBtn");
+        window.addEventListener("scroll", () => {
+            backToTopBtn.style.display = window.scrollY > 200 ? "block" : "none";
+        });
+        backToTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+
+</body>
+
+<footer class="d-flex align-items-center justify-content-center" style="background-color: #ffc44d; height:50px;">
+    <div class="container">
+        <p class="mb-0 position-absolute start-50 translate-middle">
+            &copy; チーム開発学習. 2025.
+        </p>
+    </div>
+</footer>
+
+</html>
