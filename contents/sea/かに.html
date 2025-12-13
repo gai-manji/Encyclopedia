@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>かに</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="icon" href="../../img/favicon.ico">
+
+    <style>
+        .ttl {
+            font-size: 36px;
+            font-family: 'oshigo', sans-serif;
+        }
+
+        .animal-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        #backToTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            border: none;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+    <header class="bg-warning sticky-top">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+            <div></div>
+            <h1 class="m-0 text-center flex-grow-1 ttl">かに</h1>
+            <a href="../../index.html" class="btn btn-outline-secondary btn-sm">
+                &larr; ホームに戻る
+            </a>
+        </div>
+    </header>
+
+    <div class="container py-5">
+        <div class="mb-3">
+            <img src="../../img/sea/かに/かに.webp" alt="かに" class="animal-img">
+        </div>
+
+        <h5 class="text-muted border-bottom pb-2">動物の説明</h5>
+        <div class="description-box pe-2">
+            <p>
+                カニは成長の過程で「脱皮（脱殻 / molt / ecdysis）」を行い、古い殻を脱ぎ捨てて新しい殻へと移り変わることで体を大きくしています。<br>
+                繁殖においては、多くの種類でオスとメスが交尾し、受精後はメスが腹部に卵を抱えて保護する場合もあります。孵化した幼生（プランクトン状）は成長とともに姿を変え、やがて若いカニ、そして成体へと成長していきます。<br>
+                カニの仲間は大変多様で、数センチほどの小型の種類から、脚を広げると数メートルに達する非常に大型の種類まで存在します。代表的な例として、タカアシガニ（Japanese spidercrab）は脚を広げると最大数メートルに達することでも知られています。<br>
+                一方で、数ミリ〜数センチ程度の極めて小さな種類もおり、「カニ」という分類の中だけでも形態や生態は実に多種多様です。
+            </p>
+        </div>
+
+        <div class="mt-4">
+            <div class="row">
+
+                <!-- 左：ずわいがに -->
+                <div class="col-12 col-md-6 mb-3">
+                    <div class="row align-items-start">
+                        <div class="col-6">
+                            <img src="../../img/sea/かに/ずわいがに.webp" alt="ズワイガニ" class="img-fluid">
+                        </div>
+                        <div class="col-6">
+                            <h6>類似種</h6>
+                            <h4 style="font-family: 'oshigo';">ずわいがに</h4>
+                            <p>
+                                冬の味覚として非常に親しまれており、身はやわらかく甘みがあることが特徴です。<br>
+                                地域や性別によって呼び名が異なり、オスは「松葉ガニ」「越前ガニ」、メスは「セイコガニ」「香箱ガニ」と呼ばれることがあります。<br>
+                                旬は冬（概ね 11〜3月頃）で、鍋物、刺身、焼きガニなど、多様なお料理で広く楽しまれています。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 右：伝説（ギリシャ神話） -->
+                <div class="col-12 col-md-6 mb-3">
+                    <div class="row align-items-start">
+                        <div class="col-6">
+                            <img src="../../img/sea/いるか/昔のイルカ.webp" alt="伝説のイルカ" class="img-fluid">
+                        </div>
+                        <div class="col-6">
+                            <h6>ギリシャ神話</h6>
+                            <h4>伝説</h4>
+                            <p>
+                                古代ギリシャ神話では、ヘラクレス十二の功業のひとつ「ヒュドラ退治」において、女神ヘラの命により巨大なカニがヘラクレスに襲いかかったとされています。<br>
+                                ヘラクレスはこれを退けましたが、献身に報いるため、ヘラはそのカニを夜空の星座「かに座（Cancer）」として讃えたと伝えられています。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 上に戻るボタン -->
+    <button type="button" class="btn btn-lg rounded-circle" id="backToTopBtn">
+        <i class="bi bi-arrow-up-circle-fill" style="color: #ffc44d; font-size: 4rem;"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+    <script>
+        const backToTopBtn = document.getElementById("backToTopBtn");
+        window.addEventListener("scroll", () => {
+            backToTopBtn.style.display = window.scrollY > 200 ? "block" : "none";
+        });
+        backToTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+
+</body>
+
+<footer class="d-flex align-items-center justify-content-center" style="background-color: #ffc44d; height:50px;">
+    <div class="container">
+        <p class="mb-0 position-absolute start-50 translate-middle">
+            &copy; チーム開発学習. 2025.
+        </p>
+    </div>
+</footer>
+
+</html>
