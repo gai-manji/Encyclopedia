@@ -18,42 +18,28 @@
             font-family: 'oshigo', sans-serif;
         }
 
-        /* 画像を枠いっぱいに表示 */
         .animal-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            /* 比率を保ってトリミング */
             border-radius: 8px;
         }
 
-        /* 上に戻るボタンのレイアウト */
         #backToTopBtn {
-            /* 画面に固定 */
             position: fixed;
-            /* 下からの距離 */
             bottom: 20px;
-            /* 右からの距離 */
             right: 20px;
-            /* 他要素より前面に */
             z-index: 1000;
-            /* 枠線を消す */
             border: none;
         }
     </style>
 </head>
 
 <body class="bg-light">
-    <!-- sticky-top：ヘッダーを上部に固定 -->
     <header class="bg-warning sticky-top">
         <div class="container-fluid d-flex align-items-center justify-content-between">
-            <!-- 左側は空のスペースでバランスを取る -->
             <div></div>
-
-            <!-- 中央にタイトル -->
             <h1 class="m-0 text-center flex-grow-1 ttl">いか</h1>
-
-            <!-- 右側にボタン -->
             <a href="../../index.html" class="btn btn-outline-secondary btn-sm">
                 &larr; ホームに戻る
             </a>
@@ -61,39 +47,33 @@
     </header>
 
     <div class="container py-5">
-        <!-- 画像を上に -->
         <div class="mb-3">
             <img src="../../img/sea/いか/いか.webp" alt="いか" class="animal-img">
         </div>
 
-        <!-- テキストを下に -->
         <h5 class="text-muted border-bottom pb-2">動物の説明</h5>
         <div class="description-box pe-2">
             <p>
-                イカは「軟体動物 (mollusc)」に属し、その中でも「頭足類 (cephalopod)」に分類されます。つまり、タコやコウイカに近いグループです。
+                イカは「軟体動物（mollusc）」に属しており、その中でも「頭足類（cephalopod）」に分類されます。つまり、タコやコウイカに近いグループの動物です。<br>
                 世界には300種以上のイカが生息しており、浅い海から深海まで、さまざまな海域で確認されています。<br>
-                イカの体は大きく「胴部 (mantle)」「頭部」「腕部（足）」の3つに分かれております。<br>
-                腕は全部で10本あり、8本の「腕 (arms)」と、獲物を捕らえるために長く伸びる2本の「触腕 (tentacles)」を持っています。<br>
+                イカの体は大きく「胴部（mantle）」「頭部」「腕部（足）」の3つに分かれております。<br>
+                腕は全部で10本あり、8本の「腕（arms）」と、獲物を捕らえるために長く伸びる2本の「触腕（tentacles）」を持っています。
             </p>
         </div>
 
         <div class="mt-4">
             <div class="row">
-                <!-- セット1 横並びに -->
                 <div class="col-12 col-md-6 mb-3">
                     <div class="row align-items-start">
-                        <!-- 左側：画像 -->
                         <div class="col-6">
                             <img src="../../img/sea/いか/だいおういか.webp" alt="ダイオウイカ" class="img-fluid">
                         </div>
-                        <!-- 左側：テキスト -->
                         <div class="col-6">
                             <h6>類似種</h6>
                             <h4 style="font-family: 'oshigo';">ダイオウイカ</h4>
                             <p>
-                                ダイオウイカは、腕（8本）と触腕（2本）、胴（マントル）、頭、目、くちばし、噴射管（水を噴き出す器官）など、一般的なイカの構造を備えておりますが、
-                                最大の特徴は非常に大きい体である点です。<br>
-                                これまでに記録された最大級の個体は、全長約13メートル（触腕を含む）に達したと報告されております。
+                                ダイオウイカは、8本の腕と2本の触腕、胴（マントル）、頭、目、くちばし、噴射管（水を噴き出す器官）など、一般的なイカと同じ構造を備えています。<br>
+                                最大の特徴は非常に大きな体を持つことです。これまでに記録された最大級の個体は、全長約13メートル（触腕を含む）に達したと報告されています。
                             </p>
                         </div>
                     </div>
@@ -108,17 +88,17 @@
                             <h6>伝説と科学</h6>
                             <h4>歴史</h4>
                             <p>
-                                深海に生息する巨大なイカは、かつては幻の存在とされておりました。<br>
-                                発見されても深海に暮らしているため詳細が分からず、恐れの対象として語られてきた歴史がございます。
+                                深海に生息する巨大なイカは、かつて幻の存在と考えられていました。<br>
+                                発見されても深海に暮らしているため詳細がわからず、恐れの対象として語られてきた歴史があります。
                             </p>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
 
-    <!-- 上に戻るボタン -->
     <button type="button" class="btn btn-lg rounded-circle" id="backToTopBtn">
         <i class="bi bi-arrow-up-circle-fill" style="color: #ffc44d; font-size: 4rem;"></i>
     </button>
@@ -128,7 +108,6 @@
         crossorigin="anonymous"></script>
 
     <script>
-        // スクロールで表示/非表示を切り替え
         const backToTopBtn = document.getElementById("backToTopBtn");
         window.addEventListener("scroll", () => {
             if (window.scrollY > 200) {
@@ -138,7 +117,6 @@
             }
         });
 
-        // クリックで上に戻る
         backToTopBtn.addEventListener("click", () => {
             window.scrollTo({ top: 0, behavior: "smooth" });
         });
