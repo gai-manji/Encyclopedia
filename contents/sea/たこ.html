@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>たこ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="icon" href="../../img/favicon.ico">
+
+    <style>
+        .ttl {
+            font-size: 36px;
+            font-family: 'oshigo', sans-serif;
+        }
+
+        .animal-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        #backToTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            border: none;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+    <header class="bg-warning sticky-top">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+            <div></div>
+
+            <h1 class="m-0 text-center flex-grow-1 ttl">たこ</h1>
+
+            <a href="../../index.html" class="btn btn-outline-secondary btn-sm">
+                &larr; ホームに戻る
+            </a>
+        </div>
+    </header>
+
+    <div class="container py-5">
+
+        <div class="mb-3">
+            <img src="../../img/sea/タコ/たこ.webp" alt="たこ" class="animal-img">
+        </div>
+
+        <h5 class="text-muted border-bottom pb-2">動物の説明</h5>
+
+        <div class="description-box pe-2">
+            <p>
+                タコは「頭足類（Cephalopoda）」という軟体動物の仲間で、胴体と頭部、そして八本の腕を持つ海の生き物です。<br>
+                魚類ではなく、体に骨がないため非常に柔らかく、海底や岩場を器用に移動して生活しています。<br>
+                八本の腕（arms）には吸盤が数多く付いており、獲物をつかむ際や物にしっかりと吸着する際に大変役立ちます。<br>
+                体が柔軟であるため、狭い岩の隙間などにも入り込み、外敵から身を隠すことができます。<br>
+                また、敵に遭遇した際には「墨（インク）」を吐き、周囲の視界を遮ることで身を守る習性もあります。
+            </p>
+        </div>
+
+        <div class="mt-4">
+            <div class="row">
+
+                <div class="col-12 col-md-6 mb-3">
+                    <div class="row align-items-start">
+                        <div class="col-6">
+                            <img src="../../img/sea/タコ/たこ０１.webp" alt="たこ" class="img-fluid">
+                        </div>
+
+                        <div class="col-6">
+                            <h6>生態</h6>
+                            <h4 style="font-family: 'oshigo';">たこ</h4>
+                            <p>
+                                タコは肉食性で、カニ・貝・小魚・エビ・場合によっては他のタコを捕食することもあります。<br>
+                                食事の際には、鋭いくちばし（beak）を使い、貝殻をかじったり割ったりして中身を食べます。<br>
+                                多くの種類が夜行性であり、主に夜間に狩りを行う習性があります。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 mb-3">
+                    <div class="row align-items-start">
+                        <div class="col-6">
+                            <img src="../../img/sea/タコ/クラーケン.webp" alt="クラーケン" class="img-fluid">
+                        </div>
+
+                        <div class="col-6">
+                            <h6>伝説</h6>
+                            <h4>クラーケン</h4>
+                            <p>
+                                クラーケンは北欧の伝承や航海者たちの昔話に登場する、巨大な海の怪物として語られています。<br>
+                                その姿は巨大なタコやイカに似ているとされ、深い海の底から現れて船を引きずり込んだり、大渦を起こすなどの逸話が残されています。<br>
+                                あくまで伝説上の生き物でございますが、古くから人々の想像力を刺激してきた存在として知られています。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <button type="button" class="btn btn-lg rounded-circle" id="backToTopBtn">
+        <i class="bi bi-arrow-up-circle-fill" style="color: #ffc44d; font-size: 4rem;"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+    <script>
+        const backToTopBtn = document.getElementById("backToTopBtn");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 200) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        });
+
+        backToTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+
+</body>
+
+<footer class="d-flex align-items-center justify-content-center" style="background-color: #ffc44d; height:50px;">
+    <div class="container">
+        <p class="mb-0 position-absolute start-50 translate-middle">
+            &copy; チーム開発学習. 2025.
+        </p>
+    </div>
+</footer>
+
+</html>

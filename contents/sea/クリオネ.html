@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>クリオネ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- 矢印アイコンのCDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- ファビコン -->
+    <link rel="icon" href="../../img/favicon.ico">
+
+    <style>
+        .ttl {
+            font-size: 36px;
+            font-family: 'oshigo', sans-serif;
+        }
+
+        /* 画像を枠いっぱいに表示 */
+        .animal-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        /* 上に戻るボタンのレイアウト */
+        #backToTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            border: none;
+        }
+    </style>
+</head>
+
+
+
+<body class="bg-light">
+    <header class="bg-warning sticky-top">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+            <div></div>
+
+            <h1 class="m-0 text-center flex-grow-1 ttl">クリオネ</h1>
+
+            <a href="../../index.html" class="btn btn-outline-secondary btn-sm">
+                &larr; ホームに戻る
+            </a>
+        </div>
+    </header>
+
+    <div class="container py-5">
+        <div class="mb-3">
+            <img src="../../img/sea/クリオネ/くりおね.webp" alt="クリオネ" class="animal-img">
+        </div>
+
+        <h5 class="text-muted border-bottom pb-2">動物の説明</h5>
+        <div class="description-box pe-2">
+            <p>
+                クリオネは寒い海に生息する小さな海洋生物で、その透明で優雅に泳ぐ姿から「海の天使（Sea Angel）」と呼ばれています。<br>
+                巻貝の仲間ではございますが、成長の過程で貝殻（外殻）がなくなるため、「裸殻翼足類（Gymnosomata）」に分類されています。<br>
+                半透明の体と、左右に広がる翼のような「翼足（よくそく）」を動かして泳ぐ姿が特徴的で、その美しさから“海の天使”と呼ばれるようになりました。<br>
+                体の大きさは種類によって異なりますが、多くは 1〜3 cm 程度で、最大でも 5〜8 cm ほどと非常に小型です。<br>
+                主に北極海・北太平洋・オホーツク海などの冷たい海域に生息しております。
+            </p>
+        </div>
+
+        <div class="mt-4">
+            <div class="row">
+                <!-- セット1 -->
+                <div class="col-12 col-md-6 mb-3">
+                    <div class="row align-items-start">
+                        <div class="col-6">
+                            <img src="../../img/sea/クリオネ/クリオネ01.webp" alt="クリオネ" class="img-fluid">
+                        </div>
+
+                        <div class="col-6">
+                            <h6>食について</h6>
+                            <h4 style="font-family: 'oshigo';">クリオネ</h4>
+                            <p>
+                                クリオネの捕食方法は非常に独特で、6本の触手「バッカルコーン」を伸ばして獲物を捕らえ、貝殻から獲物の体だけを引き出して食べるという方法をとります。<br>
+                                また、餌が少ない環境でも長期間（1年以上）食べずに生存できるとされており、非常に高い耐久力をもつことが研究により報告されております。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- セット2 -->
+                <div class="col-12 col-md-6 mb-3">
+                    <div class="row align-items-start">
+                        <div class="col-6">
+                            <img src="../../img/sea/クリオネ/クリオネ０２.webp" alt="クリオネ" class="img-fluid">
+                        </div>
+
+                        <div class="col-6">
+                            <h6>繁殖</h6>
+                            <h4>一生</h4>
+                            <p>
+                                クリオネは雌雄同体で、1つの個体が雄と雌の両方の生殖器官を持っています。<br>
+                                多くの場合、春から夏にかけて繁殖を行います。<br>
+                                卵はゼリー状の塊として海中に産み付けられ、孵化した幼生は植物プランクトンを食べて成長し、成熟すると貝類を捕食するようになります。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 上に戻るボタン -->
+    <button type="button" class="btn btn-lg rounded-circle" id="backToTopBtn">
+        <i class="bi bi-arrow-up-circle-fill" style="color: #ffc44d; font-size: 4rem;"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+    <script>
+        const backToTopBtn = document.getElementById("backToTopBtn");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 200) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        });
+
+        backToTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+
+</body>
+
+<footer class="d-flex align-items-center justify-content-center" style="background-color: #ffc44d; height:50px ; ">
+    <div class="container">
+        <p class="mb-0 position-absolute start-50 translate-middle">
+            &copy; チーム開発学習. 2025.
+        </p>
+    </div>
+</footer>
+
+</html>
