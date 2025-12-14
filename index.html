@@ -1,11 +1,553 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>アニマル図鑑</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- 矢印アイコンのCDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- ファビコン -->
+    <link rel="icon" href="img/favicon.ico">
+    <!-- Googleフォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet">
+
+    <style>
+        /* カードの説明文エリアの高さ固定 */
+        .height>* {
+            height: 100px;
+            width: 85%;
+            margin: 0 1rem;
+        }
+
+        /* ボタンを右下に固定 */
+        #backToTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            /* 初期は非表示 */
+            z-index: 1000;
+            /* 枠線を消す */
+            border: none;
+        }
+
+        /* --- タブ（ボタン）のスタイル調整 --- */
+        /* 1. スマホの時（991px以下）：横幅いっぱい */
+        @media (max-width: 991.98px) {
+            .custom-nav-link {
+                width: 100% !important;
+                text-align: center;
+                margin-bottom: 5px;
+            }
+        }
+
+        /* 2. PCの時（992px以上）：幅200pxで固定 */
+        @media (min-width: 992px) {
+            .custom-nav-link {
+                width: 200px;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
-<body>
-    
+
+<body class="bg-light">
+
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-light p-2 pb-0" style="background-color: #ffc44d;">
+            <div class="container-fluid">
+                <a class="navbar-brand ms-2" href="#" style="font-family:'oshigo'; font-size: 20px;">ずかん</a>
+
+                <!-- ハンバーガーメニュー -->
+                <button class="navbar-toggler mb-2 border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- タブ -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="nav nav-tabs border-0 w-100 flex-column flex-lg-row justify-content-lg-end mt-3 mt-lg-0"
+                        style="font-family: 'Mochiy Pop One';">
+                        <li class="nav-item">
+                            <button class="nav-link active text-dark px-4 custom-nav-link" data-bs-toggle="tab"
+                                data-bs-target="#land" type="button">
+                                陸
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link text-dark px-4 custom-nav-link" data-bs-toggle="tab"
+                                data-bs-target="#sea" type="button">
+                                海
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link text-dark px-4 custom-nav-link" data-bs-toggle="tab"
+                                data-bs-target="#sky" type="button">
+                                空
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 中身 -->
+    <div class="container mt-4">
+        <div class="tab-content mt-3" id="myTabContent">
+
+            <!-- 陸上動物 -->
+            <div class="tab-pane fade show active" id="land" role="tabpanel">
+                <!-- カード -->
+                <div class="row g-4">
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <!-- aタグに詳細ページのリンクを添付する -->
+                              <a href="contents/land/inoshishi.html"><img src="img/land/inoshishi/inoshishi.webp" class="card-img-top"
+                                    alt="イノシシの画像"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">イノシシ</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        イノシシは日本に生息する雑食性の動物です。イノシシの鼻は匂いを嗅ぐだけでなく、鼻で触ることで物の感覚も確かめられます。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 追加 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <!-- aタグに詳細ページのリンクを添付する -->
+                            <a href="contents/land/kangaroo.html"><img src="img/land/kangaroo/Kangaroo.webp" class="card-img-top"
+                                    alt="カンガルーの画像"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">カンガルー</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        カンガルーは主にオーストラリアに生息する草食動物です。非常に社会的で群れを作って生活しています。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 追加 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <!-- aタグに詳細ページのリンクを添付する -->
+                            <a href="contents/land/koala.html"><img src="img/land/koala/koala.webp" class="card-img-top" alt="コアラの画像"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">コアラ</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        コアラはオーストラリアに生息する樹上生活動物です。夜行性で巣を作らず樹上で眠るのが特徴です。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 追加 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <!-- aタグに詳細ページのリンクを添付する -->
+                            <a href="contents/land/gorilla.html"><img src="img/land/gorilla/gorilla.webp" class="card-img-top" alt="ゴリラの画像"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">ゴリラ</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        ゴリラはアフリカに生息する大型の霊長類で、主に森林地帯に住んでいます。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 追加 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <!-- aタグに詳細ページのリンクを添付する -->
+                            <a href="contents/land/shimauma.html"><img src="img/land/shimauma/simauma.webp" class="card-img-top"
+                                    alt="シマウマの画像"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">シマウマ</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        シマウマはアフリカに生息する草食動物で、その特徴的な白と黒の縞模様が目を引きます。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 追加 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <!-- aタグに詳細ページのリンクを添付する -->
+                            <a href="contents/land/tasmaniadevil.html"><img src="img/land/tasmaniandevil/Tasmanian devil.webp" class="card-img-top"
+                                    alt="タスマニアデビルの画像"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">タスマニアデビル</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        タスマニアデビルはオーストラリアに生息する肉食動物です。小型犬ほどの大きさで、獰猛な性格と強力なあごをもっています。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 追加 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <!-- aタグに詳細ページのリンクを添付する -->
+                            <a href="contents/land/tanuki.html"><img src="img/land/tanuki/tanuki.webp" class="card-img-top" alt="タヌキの画像"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">タヌキ</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        タヌキは日本に生息する草食動物です。果実が好物で田畑や家庭菜園に侵入して作物を食べたり、糞を落としたりするため、厄介者でもあります。
+
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 追加 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <!-- aタグに詳細ページのリンクを添付する -->
+                            <a href="contents/land/nipponshika.html"><img src="img/land/nipponshika/nipponshika.webp" class="card-img-top"
+                                    alt="ニホンジカの画像"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">ニホンジカ</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        ニホンジカは日本に生息する草食動物です。日本では7亜種に分かれ北海道から慶良間諸島まで分布しています。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 追加 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <!-- aタグに詳細ページのリンクを添付する -->
+                            <a href="contents/land/lion.html"><img src="img/land/lion/Lion.webp" class="card-img-top" alt="ライオンの画像"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">ライオン</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        ライオンはアフリカのサバンナに生息する大型の肉食獣で、百獣の王と称されます。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 海洋動物 -->
+            <div class="tab-pane fade" id="sea" role="tabpanel">
+                <div class="row g-4"> <!-- カード1 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100"> <!-- aタグに詳細ページのリンクを添付する --> <a href="contents/sea/いか.html"><img
+                                    src="img/sea/いか/いか.webp" class="card-img-top" alt="いか"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">いか</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text"> 体は胴と頭、そして腕と呼ばれる足があり、全部で10本あります。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100"> <!-- aタグに詳細ページのリンクを添付する --> <a href="contents/sea/いるか.html"><img
+                                    src="img/sea/いるか/いるか.webp" class="card-img-top" alt="イルカ"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">イルカ</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text"> 海や川で暮らす「海棲（かいせい）哺乳類（ほにゅうるい）」です。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100"> <!-- aタグに詳細ページのリンクを添付する --> <a href="contents/sea/かに.html"><img
+                                    src="img/sea/かに/かに.webp" class="card-img-top" alt="カニ"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">かに</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text"> 「甲殻類（こうかくるい）」という仲間に属する海の生き物です。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100"> <!-- aタグに詳細ページのリンクを添付する --> <a href="contents/sea/かめ.html"><img
+                                    src="img/sea/かめ/かめ.webp" class="card-img-top" alt="かめ"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">かめ</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text"> 爬虫類で、最大で数億年前から地球にいる、とても古い動物のグループです。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100"> <!-- aタグに詳細ページのリンクを添付する --> <a href="contents/sea/くじら.html"><img
+                                    src="img/sea/くじら/くじら.webp" class="card-img-top" alt="クジラ"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">クジラ</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text"> 海に住む 哺乳類 (Mammalia)
+                                        の仲間。魚ではなく、私たち人間と同じ「温血」「肺で呼吸」「母乳で子を育てる」特徴を持っています。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100"> <!-- aタグに詳細ページのリンクを添付する --> <a href="contents/sea/くらげ.html"><img
+                                    src="img/sea/くらげ/くらげ.webp" class="card-img-top" alt="くらげ"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">くらげ</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        「刺胞動物(Cnidaria)」というグループに属する無脊椎動物で、「魚」ではありません。骨も背骨も、心臓も脳ももたない、柔らかくゼリー状の体を持つ生き物です。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100"> <!-- aタグに詳細ページのリンクを添付する --> <a href="contents/sea/クリオネ.html"><img
+                                    src="img/sea/クリオネ/くりおね.webp" class="card-img-top" alt="クリオネ"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">クリオネ</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        貝に近い仲間（腹足類などの「軟体動物」）ですが、貝殻を持たない 特殊な海の生き物です。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100"> <!-- aタグに詳細ページのリンクを添付する --> <a href="contents/sea/さめ.html"><img
+                                    src="img/sea/さめ/さめ.webp" class="card-img-top" alt="さめ"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">サメ</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        骨ではなく「軟骨 (cartilage)」でできた骨格を持つ「軟骨魚類」に属します。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100"> <!-- aタグに詳細ページのリンクを添付する --> <a href="contents/sea/たこ.html"><img
+                                    src="img/sea/タコ/たこ.webp" class="card-img-top" alt="たこ"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">たこ</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        「頭足類 (Cephalopoda)」という軟体動物の仲間で、軟骨魚でもなく、魚でもない軟らかい体で、骨がなく、体の大部分は柔らかい筋肉や組織でできています。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 空の動物 -->
+            <div class="tab-pane fade" id="sky" role="tabpanel">
+                <div class="row g-4">
+                    <!-- カード1 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <!-- aタグに詳細ページのリンクを添付する -->
+                            <a href="contents/sky/grey_heron.html"><img src="img/sky/grey_heron/aosagi.webp" class="card-img-top" alt="アオサギ"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">アオサギ</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        日本で繁殖するサギの仲間としては最大です。背が高く、脚も長い。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- カード2 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <!-- aタグに詳細ページのリンクを添付する -->
+                            <a href="contents/sky/golden_eagle.html"><img src="img/sky/golden_eagle/inuwashi.webp" class="card-img-top" alt="イヌワシ"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">イヌワシ</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        全身ほぼ黒褐色をした大型の猛禽です。本州、四国、九州の山岳地に生息します。絶滅の危惧されている代表的な種です。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- カード3 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <!-- aタグに詳細ページのリンクを添付する -->
+                            <a href="contents/sky/whooper_swan.html"><img src="img/sky/whooper_swan/ohakucho.webp" class="card-img-top" alt="オオハクチョウ"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">オオハクチョウ</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        日本では冬鳥で、主に北海道と東北地方北部で越冬しています。シベリアからやってくる、代表的な冬鳥です。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- カード4 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <!-- aタグに詳細ページのリンクを添付する -->
+                            <a href="contents/sky/mandarin_duck.html"><img src="img/sky/mandarin_duck/oshidari.webp" class="card-img-top" alt="オシドリ"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">オシドリ</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        メスと一緒にツガイでいることが多く、オシドリ夫婦の名の由来となっています。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- カード5 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <!-- aタグに詳細ページのリンクを添付する -->
+                            <a href="contents/sky/snakehead.html"><img src="img/sky/snakehead/kizi.webp" class="card-img-top" alt="キジ"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">キジ</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        焼野の雉（きぎす）、夜の鶴」などの子を思う親の愛情の深さを表わすタトエ話があります。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- カード6 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <!-- aタグに詳細ページのリンクを添付する -->
+                            <a href="contents/sky/long_tailed_tit.html"><img src="img/sky/long_tailed_tit/shimaenaga.webp" class="card-img-top" alt="シマエナガ"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">シマエナガ</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        シマエナガのシマは「島」で、北海道を意味し、エナガの北海道亜種であることを表しています。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- カード7 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <!-- aタグに詳細ページのリンクを添付する -->
+                            <a href="contents/sky/sparrow.html"><img src="img/sky/sparrow/suzume.webp" class="card-img-top" alt="スズメ"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">スズメ</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        日本中に分布います。日本人にとっていちばん身近な鳥です。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- カード8 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <!-- aタグに詳細ページのリンクを添付する -->
+                            <a href="contents/sky/japanese_wagtail.html"><img src="img/sky/japanese_wagtail/segurosekirei.webp" class="card-img-top" alt="セグロセキレイ"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">セグロセキレイ</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        着地の折には腰を上下に振ることが多く、セキレイ類の特徴の一つになっています。日本だけで繁殖する日本特産種です。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- カード9 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <!-- aタグに詳細ページのリンクを添付する -->
+                            <a href="contents/sky/dobato.html"><img src="img/sky/dobato/dobato.webp" class="card-img-top" alt="ドバト"></a>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-family: 'oshigo';">ドバト</h5>
+                                <div class="overflow-auto height">
+                                    <p class="card-text">
+                                        通信用に改良した伝書鳩などが、野生化して生活しているものを日本ではドバトと呼んでいます。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 上に戻るボタン -->
+    <button type="button" class="btn btn-lg rounded-circle" id="backToTopBtn">
+        <!-- アイコンのサイズは、フォント依存。調整する際は font-size でサイズ調整 -->
+        <i class="bi bi-arrow-up-circle-fill" style="color: #ffc44d; font-size: 4rem;"></i>
+    </button>
+
+
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+    <script>
+        // スクロールで表示/非表示を切り替え
+        window.addEventListener("scroll", function () {
+            const btn = document.getElementById("backToTopBtn");
+            if (window.scrollY > 200) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        });
+
+        // クリックで上に戻る
+        document.getElementById("backToTopBtn").addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+
+    <footer class="position-relative d-flex align-items-center" style="background-color: #ffc44d; height:50px;">
+        <div class="container">
+            <!-- 左端にお問い合わせ -->
+            <a href="form.html" class="m-1">お問い合わせ</a>
+
+            <!-- 中央にコピーライト ms-●：余白を左側に追加 -->
+            <p class="mb-0 position-absolute top-50 start-50 translate-middle ms-3">
+                &copy; チーム開発学習. 2025.
+            </p>
+        </div>
+    </footer>
 </body>
+
+
 </html>

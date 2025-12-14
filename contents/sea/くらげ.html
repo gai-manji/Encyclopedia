@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>クラゲ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="icon" href="../../img/favicon.ico">
+
+    <style>
+        .ttl {
+            font-size: 36px;
+            font-family: 'oshigo', sans-serif;
+        }
+
+        .animal-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        #backToTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            border: none;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+    <header class="bg-warning sticky-top">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+            <div></div>
+            <h1 class="m-0 text-center flex-grow-1 ttl">クラゲ</h1>
+            <a href="../../index.html" class="btn btn-outline-secondary btn-sm">
+                &larr; ホームに戻る
+            </a>
+        </div>
+    </header>
+
+    <div class="container py-5">
+        <div class="mb-3">
+            <img src="../../img/sea/くらげ/くらげ.webp" alt="クラゲ" class="animal-img">
+        </div>
+
+        <h5 class="text-muted border-bottom pb-2">動物の説明</h5>
+        <div class="description-box pe-2">
+            <p>
+                クラゲは「刺胞動物（Cnidaria）」に属する無脊椎動物であり、魚ではなく、骨や背骨も持っていません。<br>
+                多くのクラゲは「傘のようなメデューサ形の体」と、その下に伸びる「触手」を備えており、この姿が典型的な特徴です。<br>
+                体の大部分はゼリー状で柔らかく、種によってはほとんどが水分で構成されている場合もあります。
+            </p>
+        </div>
+
+        <div class="mt-4">
+            <div class="row">
+
+                <!-- セット1 -->
+                <div class="col-12 col-md-6 mb-3">
+                    <div class="row align-items-start">
+                        <div class="col-6">
+                            <img src="../../img/sea/くらげ/くらげ０２.webp" alt="クラゲ" class="img-fluid">
+                        </div>
+
+                        <div class="col-6">
+                            <h6>豆知識</h6>
+                            <h4 style="font-family: 'oshigo';">クラゲ</h4>
+                            <p>
+                                クラゲは非常に古い生き物であり、数億年前から海に存在していたことが化石から確認されています。<br>
+                                体の構造はきわめてシンプルで、脳や骨、複雑な器官を持たず、必要最低限の仕組みで海の環境に適応しています。<br>
+                                また、多くのクラゲは刺胞と呼ばれる毒針を使って獲物を捕らえたり、自身を守ったりいたしますため、美しい姿をしておりますが、触れる際には注意が必要です。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- セット2 -->
+                <div class="col-12 col-md-6 mb-3">
+                    <div class="row align-items-start">
+                        <div class="col-6">
+                            <img src="../../img/sea/くらげ/クラゲ０１.webp" alt="クラゲ" class="img-fluid">
+                        </div>
+
+                        <div class="col-6">
+                            <h6>ユニークさ</h6>
+                            <h4>クラゲの生き方</h4>
+                            <p>
+                                クラゲの一生は独特で、成体であるメデューサが卵や精子を放出し、受精して幼生「プラヌラ」となります。<br>
+                                その後、プラヌラは海底に付着し「ポリプ」と呼ばれる姿へ変化し、さらにそのポリプから、再びメデューサが生み出されます。<br>
+                                このように「有性生殖」と「無性生殖」を使い分けるという、非常に興味深いライフサイクルを持っています。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 上に戻るボタン -->
+    <button type="button" class="btn btn-lg rounded-circle" id="backToTopBtn">
+        <i class="bi bi-arrow-up-circle-fill" style="color: #ffc44d; font-size: 4rem;"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+    <script>
+        const backToTopBtn = document.getElementById("backToTopBtn");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 200) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        });
+
+        backToTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+
+</body>
+
+<footer class="d-flex align-items-center justify-content-center" style="background-color: #ffc44d; height:50px;">
+    <div class="container">
+        <p class="mb-0 position-absolute start-50 translate-middle">
+            &copy; チーム開発学習. 2025.
+        </p>
+    </div>
+</footer>
+
+</html>
