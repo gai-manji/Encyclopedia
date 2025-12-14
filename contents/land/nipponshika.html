@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ニホンジカ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- 矢印アイコンのCDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- ファビコン -->
+    <link rel="icon" href="../../img/favicon.ico">
+
+    <style>
+        .ttl {
+            font-size: 36px;
+            font-family: 'oshigo', sans-serif;
+        }
+
+        /* 画像を枠いっぱいに表示 */
+        .animal-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* 比率を保ってトリミング */
+            border-radius: 8px;
+        }
+
+        /* 上に戻るボタンのレイアウト */
+        #backToTopBtn {
+            /* 画面に固定 */
+            position: fixed;
+            /* 下からの距離 */
+            bottom: 20px;
+            /* 右からの距離 */
+            right: 20px;
+            /* 他要素より前面に */
+            z-index: 1000;
+            /* 枠線を消す */
+            border: none;
+        }
+    </style>
+</head>
+
+
+
+<body class="bg-light">
+    <!-- sticky-top：ヘッダーを上部に固定 -->
+    <header class="bg-warning sticky-top">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+            <!-- 左側は空のスペースでバランスを取る -->
+            <div></div>
+
+            <!-- 中央にタイトル -->
+            <h1 class="m-0 text-center flex-grow-1 ttl">ニホンジカ</h1>
+
+            <!-- 右側にボタン -->
+            <a href="../../index.html" class="btn btn-outline-secondary btn-sm">
+                &larr; ホームに戻る
+            </a>
+        </div>
+    </header>
+    <div class="container py-5">
+        <!-- 画像を上に -->
+        <div class="mb-3">
+            <img src="../../img/land/nipponshika/nipponshika.webp" alt="ニホンジカの画像" class="animal-img">
+        </div>
+
+        <!-- テキストを下に -->
+        <h5 class="text-muted border-bottom pb-2">動物の説明</h5>
+        <div class="description-box pe-2">
+            <p>
+                日本の山野に広く生息する、私たちに最も身近な大型草食獣です。オスは毎年生え変わる枝分かれした角を持ち、夏には「鹿の子模様」と呼ばれる白い斑点のある茶色の毛、冬は保温性の高い灰褐色の毛へと衣替えをします。
+                奈良公園などで「神の使い」として愛される一方、繁殖力が強く、近年は増えすぎて農林業への被害をもたらす害獣としての側面も持っています。
+                秋の繁殖期になると、オスは「ヒュー」「フィー」といった笛のような甲高い声で鳴き、その哀愁漂う声は古くから和歌の題材としても親しまれてきました。
+            </p>
+        </div>
+        <div class="mt-4">
+            <div class="row">
+                <!-- セット1 横並びに -->
+                <div class="col-12 col-md-6 mb-3">
+                    <div class="row align-items-start">
+                        <!-- 左側：画像 -->
+                        <div class="col-6">
+                            <img src="../../img/land/nipponshika/tonakai.webp" alt="トナカイ" class="img-fluid">
+                        </div>
+                        <!-- 左側：テキスト -->
+                        <div class="col-6">
+                            <h6>類似種</h6>
+                            <h4 style="font-family: 'oshigo';">トナカイ</h4>
+                            <p>
+                                寒い北極圏などに生息するシカの仲間で、サンタクロースの相棒として有名です。
+                                最大の特徴は、シカ科の中で唯一オスもメスも角が生えること。
+                                雪の上でも沈まない大きな蹄を持ち、寒さに特化した体をしています。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- セット2 -->
+                <div class="col-12 col-md-6 mb-3">
+                    <div class="row align-items-start">
+                        <div class="col-6">
+                            <img src="../../img/land/nipponshika/nipponshikaihip.webp" alt="動物の画像" class="img-fluid">
+                        </div>
+                        <div class="col-6">
+                            <h6>特殊な生存方法</h6>
+                            <h4>ニホンジカの合図</h4>
+                            <p>
+                                ニホンジカは危険を察知すると、お尻の白い毛をパッと逆立てて大きく広げます。
+                                これは暗い森の中でも目立つ「白い信号」を仲間に見せることで、声を出さずに「危険だ！逃げろ！」と合図を送るための優れた知恵なのです。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- 上に戻るボタン -->
+    <button type="button" class="btn btn-lg rounded-circle" id="backToTopBtn">
+        <!-- アイコンのサイズは、フォント依存。調整する際は font-size でサイズ調整 -->
+        <i class="bi bi-arrow-up-circle-fill" style="color: #ffc44d; font-size: 4rem;"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+        // スクロールで表示/非表示を切り替え
+        const backToTopBtn = document.getElementById("backToTopBtn");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 200) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        });
+
+        // クリックで上に戻る
+        backToTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+    </script>
+
+</body>
+
+<footer class="d-flex align-items-center justify-content-center" style="background-color: #ffc44d; height:50px ; ">
+    <div class="container">
+        <!-- 中央にコピーライト -->
+        <p class="mb-0 position-absolute start-50 translate-middle">
+            &copy; チーム開発学習. 2025.
+        </p>
+    </div>
+</footer>
+
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>シマウマ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- 矢印アイコンのCDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- ファビコン -->
+    <link rel="icon" href="../../img/favicon.ico">
+
+    <style>
+        .ttl {
+            font-size: 36px;
+            font-family: 'oshigo', sans-serif;
+        }
+
+        /* 画像を枠いっぱいに表示 */
+        .animal-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* 比率を保ってトリミング */
+            border-radius: 8px;
+        }
+
+        /* 上に戻るボタンのレイアウト */
+        #backToTopBtn {
+            /* 画面に固定 */
+            position: fixed;
+            /* 下からの距離 */
+            bottom: 20px;
+            /* 右からの距離 */
+            right: 20px;
+            /* 他要素より前面に */
+            z-index: 1000;
+            /* 枠線を消す */
+            border: none;
+        }
+    </style>
+</head>
+
+
+
+<body class="bg-light">
+    <!-- sticky-top：ヘッダーを上部に固定 -->
+    <header class="bg-warning sticky-top">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+            <!-- 左側は空のスペースでバランスを取る -->
+            <div></div>
+
+            <!-- 中央にタイトル -->
+            <h1 class="m-0 text-center flex-grow-1 ttl">シマウマ</h1>
+
+            <!-- 右側にボタン -->
+            <a href="../../index.html" class="btn btn-outline-secondary btn-sm">
+                &larr; ホームに戻る
+            </a>
+        </div>
+    </header>
+    <div class="container py-5">
+        <!-- 画像を上に -->
+        <div class="mb-3">
+            <img src="../../img/land/shimauma/simauma.webp" alt="シマウマの画像" class="animal-img">
+        </div>
+
+        <!-- テキストを下に -->
+        <h5 class="text-muted border-bottom pb-2">動物の説明</h5>
+        <div class="description-box pe-2">
+            <p>
+                アフリカのサバンナを代表する、白黒の縞模様が特徴的なウマ科の動物です。
+                このユニークな模様は「指紋」のように個体ごとに異なり、群れ全体で動くことで視覚的な錯覚を起こし、ライオンなどの捕食者から個体を特定されにくくする効果があります。
+                また、病気を運ぶツェツェバエなどの虫除け効果もあるとされています。
+                見た目は美しいですが、実は非常に気性が荒く、後ろ足の蹴りはライオンの顎を砕くほどの破壊力があります。そのため、歴史上で家畜化に成功した例はほとんどありません。ちなみに、毛を剃った地肌の色は「黒色」です。
+            </p>
+        </div>
+        <div class="mt-4">
+            <div class="row">
+                <!-- セット1 横並びに -->
+                <div class="col-12 col-md-6 mb-3">
+                    <div class="row align-items-start">
+                        <!-- 左側：画像 -->
+                        <div class="col-6">
+                            <img src="../../img/land/shimauma/Okapi.webp" alt="オカピ" class="img-fluid">
+                        </div>
+                        <!-- 左側：テキスト -->
+                        <div class="col-6">
+                            <h6>類似種</h6>
+                            <h4 style="font-family: 'oshigo';">オカピ</h4>
+                            <p>
+                                お尻の美しい縞模様からシマウマの仲間に見えますが、実は「キリン」の仲間です。
+                                「森の貴婦人」と呼ばれる世界三大珍獣の一つで、キリン譲りの長い舌を持ち、自分の耳掃除ができるほど器用に動かせます。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- セット2 -->
+                <div class="col-12 col-md-6 mb-3">
+                    <div class="row align-items-start">
+                        <div class="col-6">
+                            <img src="../../img/land/shimauma/shimaumavoice.webp" alt="動物の画像" class="img-fluid">
+                        </div>
+                        <div class="col-6">
+                            <h6>馬じゃない？意外な</h6>
+                            <h4>鳴き声</h4>
+                            <p>
+                                シマウマは馬の仲間ですが、「ヒヒーン」とは鳴きません。
+                                実は犬のように「ワンワン」「キャンキャン」という甲高い声で鳴きます。
+                                見た目とは裏腹に、サバンナではこの小型犬のような声で仲間と連絡を取り合っています。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- 上に戻るボタン -->
+    <button type="button" class="btn btn-lg rounded-circle" id="backToTopBtn">
+        <!-- アイコンのサイズは、フォント依存。調整する際は font-size でサイズ調整 -->
+        <i class="bi bi-arrow-up-circle-fill" style="color: #ffc44d; font-size: 4rem;"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+        // スクロールで表示/非表示を切り替え
+        const backToTopBtn = document.getElementById("backToTopBtn");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 200) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        });
+
+        // クリックで上に戻る
+        backToTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+    </script>
+
+</body>
+
+<footer class="d-flex align-items-center justify-content-center" style="background-color: #ffc44d; height:50px ; ">
+    <div class="container">
+        <!-- 中央にコピーライト -->
+        <p class="mb-0 position-absolute start-50 translate-middle">
+            &copy; チーム開発学習. 2025.
+        </p>
+    </div>
+</footer>
+
+</html>
